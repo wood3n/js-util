@@ -1,2 +1,2 @@
 # js-util
-This library collect JavaScript utilities.
+This library collect javascript utilities.
