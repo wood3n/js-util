@@ -1,11 +1,12 @@
 {
-  "name": "js-util",
-  "version": "1.0.0",
+  "name": "jtil",
+  "version": "1.0.1",
   "author": "wangkai",
   "license": "MIT",
   "description": "This library collect javascript utilities.",
+  "main": "lib/index.js",
   "files": [
-    "lib",
+    "lib/**",
     "README.md",
     "LICENSE",
     "tsdoc-metadata.json"
@@ -13,6 +14,7 @@
   "scripts": {
     "build": "node scripts/build.js",
     "analyze": "node scripts/build.js --analyze=true",
+    "pub": "node scripts/publish.js",
     "report": "api-extractor run --local --verbose",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -35,7 +37,11 @@
     "rollup": "^2.70.1",
     "rollup-plugin-progress": "^1.1.2",
     "rollup-plugin-visualizer": "^5.6.0",
+    "shelljs": "^0.8.5",
     "tslib": "^2.3.1",
     "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "jtil": "^1.0.1"
   }
 }
