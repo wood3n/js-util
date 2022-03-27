@@ -1,5 +1,6 @@
 const glob = require('glob');
 const path = require('path');
+const fs = require('fs');
 const { rollup } = require('rollup');
 const { nodeResolve } = require('@rollup/plugin-node-resolve');
 const pluginTS = require('@rollup/plugin-typescript');
@@ -25,7 +26,10 @@ async function build() {
   const bundle = await rollup({
     input,
     plugins: [
-      pluginTS(),
+      pluginTS({
+        // 指定生成 *.d.ts 类型文件
+        tsconfig: path.resolve(process.cwd(), 'tsconfig.json'),
+      }),
       nodeResolve(),
       analyze &&
         visualizer({
@@ -35,6 +39,14 @@ async function build() {
         }),
     ].filter(Boolean),
   });
+
+  const outputDir = path.resolve(process.cwd(), 'lib');
+  if (fs.existsSync(outputDir)) {
+    fs.rmSync(outputDir, {
+      recursive: true,
+      force: true,
+    });
+  }
 
   await bundle.write({
     dir: path.resolve(process.cwd(), 'lib'),

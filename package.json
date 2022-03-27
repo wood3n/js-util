@@ -1,19 +1,25 @@
 {
   "name": "js-util",
   "version": "1.0.0",
+  "author": "wangkai",
+  "license": "MIT",
   "description": "This library collect javascript utilities.",
-  "main": "index.js",
+  "files": [
+    "lib",
+    "README.md",
+    "LICENSE",
+    "tsdoc-metadata.json"
+  ],
   "scripts": {
     "build": "node scripts/build.js",
     "analyze": "node scripts/build.js --analyze=true",
+    "report": "api-extractor run --local --verbose",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wood3n/js-util.git"
   },
-  "author": "wangkai",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/wood3n/js-util/issues"
   },

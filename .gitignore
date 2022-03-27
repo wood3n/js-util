@@ -106,3 +106,4 @@ dist
 #output lib
 lib
 analyze
+tsdoc-metadata.json
