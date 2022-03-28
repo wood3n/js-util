@@ -105,5 +105,6 @@ dist
 
 #output lib
 lib
+dts
 analyze
 tsdoc-metadata.json

@@ -1,8 +1,6 @@
 /**
  * 节流处理
- * @param fn 原函数
- * @param interval 节流函数执行间隔时间
- * @returns 节流函数
+ * @public
  */
 export default function throttle<R>(
   fn: (...args: unknown[]) => R,

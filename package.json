@@ -12,10 +12,11 @@
     "tsdoc-metadata.json"
   ],
   "scripts": {
-    "build": "node scripts/build.js",
+    "build": "run-s bundle build-types rollup-types",
+    "bundle": "node scripts/build.js",
+    "build-types": "tsc --emitDeclarationOnly --declaration --outDir dts",
+    "rollup-types": "api-extractor run && rimraf dts",
     "analyze": "node scripts/build.js --analyze=true",
-    "pub": "node scripts/publish.js",
-    "report": "api-extractor run --local --verbose",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -34,6 +35,8 @@
     "eslint": "^8.12.0",
     "glob": "^7.2.0",
     "minimist": "^1.2.6",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
     "rollup": "^2.70.1",
     "rollup-plugin-progress": "^1.1.2",
     "rollup-plugin-visualizer": "^5.6.0",

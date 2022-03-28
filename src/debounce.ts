@@ -1,8 +1,6 @@
 /**
  * 防抖
- * @param fn 原函数
- * @param timeout 执行周期
- * @returns 防抖函数
+ * @public
  */
 export default function debounce<R>(
   fn: (...args: unknown[]) => R,

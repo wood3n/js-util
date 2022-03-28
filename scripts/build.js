@@ -29,6 +29,7 @@ async function build() {
       pluginTS({
         // 指定生成 *.d.ts 类型文件
         tsconfig: path.resolve(process.cwd(), 'tsconfig.json'),
+        declaration: false,
       }),
       nodeResolve(),
       analyze &&
